@@ -1,12 +1,12 @@
 # data-stack
 对数据进行栈式管理，可以选用特定方式存储，比如cookie，sessionStorage，localStorage，或者自己服务器上
 
-### 安装
+## 安装
 ```javascript
 npm install data-stack
 ```
 
-### 使用
+## 使用
 ```
 import dataStack, { installMode, setMode } from 'data-stack'
 
@@ -25,14 +25,14 @@ stack.get(1)
 stack.pop()
 ```
 
-### dataStack API
+## dataStack API
 
-#### dataStack([config [, isAsync])
+### dataStack([config [, isAsync])
 构造一个stack对象，注意 <i>isAsync</i> 传入true与false返回对象不一样
 当 <i>isAsync</i> 为false时返回 [StorageStack](####StorageStack)
 当 <i>isAsync</i> 为true时返回 [AyncStorageStack](####AyncStorageStack)
 
-##### config
+#### config
 ```
 {
   // 标识符，注意如果需要持久化除了选用特定模式name值应该也要保存起来，下次传入即可恢复对象,如果不提供则每次都新建
@@ -50,7 +50,7 @@ stack.pop()
   abstract get(index: number)
   abstract clear()
 
-##### StorageStack
+#### StorageStack
 |  方法   | 说明  | 
 |  ----  | ----  |
 | push(data: T) : T | 向栈顶推入数据 |
@@ -60,7 +60,7 @@ stack.pop()
 | clear(): void | 清除栈数据 |
 
 
-##### AyncStorageStack
+#### AyncStorageStack
 |  方法   | 说明  | 
 |  ----  | ----  |
 | load(cb: function) : void | 栈初始化完成后的回调 |
@@ -72,7 +72,7 @@ stack.pop()
 
 
 
-#### dataStack.setMode(mode)
+### dataStack.setMode(mode)
 设置栈存储的方式，mode为字符串，现在已提供 <i>object</i>，<i>cookie</i>，<i>sessionStorage</i>，<i>localStorage</i>  4种模式
 
 |  mode   | 说明  | 
@@ -83,12 +83,12 @@ stack.pop()
 | local | localStorage中存储，可以持久化 |
 
 
-#### dataStack.installMode(name, storage)
-为dataStack添加模式，添加后可在 [setMode](####dataStack.setMode(mode))中使用
+### dataStack.installMode(name, storage)
+为dataStack添加模式，添加后可在 [setMode](###dataStack.setMode(mode))中使用
 name 为字符串，为模式的名称比如 <i>aliy</i>
-storage 为 [Storage](#####Storage)或[AyncStorage](#####AyncStorage)对象
+storage 为 [Storage](####Storage)或[AyncStorage](####AyncStorage)对象
 
-##### Storage
+#### Storage
 ```
 {
   // 删除一条栈元素
@@ -99,7 +99,7 @@ storage 为 [Storage](#####Storage)或[AyncStorage](#####AyncStorage)对象
   getItem: (key: string) => T
 }
 ```
-##### AyncStorage
+#### AyncStorage
 ```
 {
   // 删除一条栈元素

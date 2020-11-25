@@ -1,6 +1,6 @@
 {
   "name": "lasting-stack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The data can be stored in a specific way, such as cookie, session storage, local storage, or on your own server",
   "main": "src/export.js",
   "scripts": {

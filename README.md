@@ -8,7 +8,7 @@ npm install data-stack
 
 ## 使用
 ```
-import dataStack, { installMode, setMode } from 'data-stack'
+import dataStack from 'data-stack'
 
 const stack = dataStack({
   name: 'aa',
@@ -28,14 +28,15 @@ stack.pop()
 ## dataStack API
 
 ### dataStack([config [, isAsync])
-构造一个stack对象，注意 <i>isAsync</i> 传入true与false返回对象不一样
+构造一个stack对象，注意 <i>isAsync</i> 传入true与false返回对象不一样<br>
 当 <i>isAsync</i> 为false时返回 [StorageStack](#StorageStack)
 当 <i>isAsync</i> 为true时返回 [AyncStorageStack](#AyncStorageStack)
 
 #### config
 ```
 {
-  // 标识符，注意如果需要持久化除了选用特定模式name值应该也要保存起来，下次传入即可恢复对象,如果不提供则每次都新建
+  // 标识符，注意如果需要持久化除了选用特定模式name值应该也要保存起来，
+  // 下次传入即可恢复对象,如果不提供则每次都新建
   name?: 'aa',
   // 提供编码接口可以对持久化的数据进行编码，存储的对象即为编码后的数据
   encode?: JSON.stringify,
@@ -43,12 +44,6 @@ stack.pop()
   decode?: JSON.parse
 }
 ```
-
-  abstract getData()
-  abstract push(data: T)
-  abstract pop()
-  abstract get(index: number)
-  abstract clear()
 
 #### StorageStack
 |  方法   | 说明  | 
@@ -84,8 +79,8 @@ stack.pop()
 
 
 ### dataStack.installMode(name, storage)
-为dataStack添加模式，添加后可在 [setMode](#dataStack.setMode(mode))中使用
-name 为字符串，为模式的名称比如 <i>aliy</i>
+为dataStack添加模式，添加后可在 [setMode](#dataStack.setMode(mode))中使用<br>
+name 为字符串，为模式的名称比如 <i>aliy</i><br>
 storage 为 [Storage](#Storage)或[AyncStorage](#AyncStorage)对象
 
 #### Storage

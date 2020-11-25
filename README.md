@@ -29,8 +29,8 @@ stack.pop()
 
 ### dataStack([config [, isAsync])
 构造一个stack对象，注意 <i>isAsync</i> 传入true与false返回对象不一样
-当 <i>isAsync</i> 为false时返回 [StorageStack](####StorageStack)
-当 <i>isAsync</i> 为true时返回 [AyncStorageStack](####AyncStorageStack)
+当 <i>isAsync</i> 为false时返回 [StorageStack](#StorageStack)
+当 <i>isAsync</i> 为true时返回 [AyncStorageStack](#AyncStorageStack)
 
 #### config
 ```
@@ -84,9 +84,9 @@ stack.pop()
 
 
 ### dataStack.installMode(name, storage)
-为dataStack添加模式，添加后可在 [setMode](###dataStack.setMode(mode))中使用
+为dataStack添加模式，添加后可在 [setMode](#dataStack.setMode(mode))中使用
 name 为字符串，为模式的名称比如 <i>aliy</i>
-storage 为 [Storage](####Storage)或[AyncStorage](####AyncStorage)对象
+storage 为 [Storage](#Storage)或[AyncStorage](#AyncStorage)对象
 
 #### Storage
 ```

@@ -4,9 +4,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
   entry: './src/export.ts',
   output: {
-    filename: './data-stack.js',
+    filename: './lastingStack.js',
     path: resolve('dist'),
-    library: 'dataStack',
+    library: 'lastingStack',
     libraryTarget: 'umd'
   },
   module: {

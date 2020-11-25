@@ -1,5 +1,5 @@
 {
-  "name": "data-interact",
+  "name": "lasting-stack",
   "version": "1.0.0",
   "description": "The data can be stored in a specific way, such as cookie, session storage, local storage, or on your own server",
   "main": "src/export.js",
@@ -20,8 +20,8 @@
   },
   "keywords": [
     "stack",
-    "data",
-    "data-stack",
+    "lasting",
+    "lasting-stack",
     "persistence",
     "cookie",
     "localStorage",

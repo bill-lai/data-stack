@@ -1,16 +1,16 @@
-# data-stack
+# lasting-stack
 对数据进行栈式管理，可以选用特定方式存储，比如cookie，sessionStorage，localStorage，或者自己服务器上
 
 ## 安装
 ```javascript
-npm install data-stack
+npm install lasting-stack
 ```
 
 ## 使用
 ```
-import dataStack from 'data-stack'
+import lastingStack from 'lasting-stack'
 
-const stack = dataStack({
+const stack = lastingStack({
   name: 'aa',
   decode: JSON.parse,
   encode: JSON.stringify
@@ -25,9 +25,9 @@ stack.get(1)
 stack.pop()
 ```
 
-## dataStack API
+## lastingStack API
 
-### dataStack([config [, isAsync])
+### lastingStack([config [, isAsync])
 构造一个stack对象，注意 <i>isAsync</i> 传入true与false返回对象不一样<br>
 当 <i>isAsync</i> 为false时返回 [StorageStack](#StorageStack)
 当 <i>isAsync</i> 为true时返回 [AyncStorageStack](#AyncStorageStack)
@@ -67,7 +67,7 @@ stack.pop()
 
 
 
-### dataStack.setMode(mode)
+### lastingStack.setMode(mode)
 设置栈存储的方式，mode为字符串，现在已提供 <i>object</i>，<i>cookie</i>，<i>sessionStorage</i>，<i>localStorage</i>  4种模式
 
 |  mode   | 说明  | 
@@ -78,8 +78,8 @@ stack.pop()
 | local | localStorage中存储，可以持久化 |
 
 
-### dataStack.installMode(name, storage)
-为dataStack添加模式，添加后可在 [setMode](#dataStack.setMode(mode))中使用<br>
+### lastingStack.installMode(name, storage)
+为lastingStack添加模式，添加后可在 [setMode](#lastingStack.setMode(mode))中使用<br>
 name 为字符串，为模式的名称比如 <i>aliy</i><br>
 storage 为 [Storage](#Storage)或[AyncStorage](#AyncStorage)对象
 

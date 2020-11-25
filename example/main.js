@@ -1,7 +1,7 @@
-import dataStack from '../src/index'
+import lastingStack from '../src/index'
 
 let object = {}
-dataStack.installMode('aaa', {
+lastingStack.installMode('aaa', {
   getItem(key) {
     return new Promise(r => {
       setTimeout(() => r(object[key]), 1000)
@@ -16,9 +16,9 @@ dataStack.installMode('aaa', {
 })
 
 
-dataStack.setMode('aaa')
+lastingStack.setMode('aaa')
 
-const stack = dataStack({name: 'aa', decode: decodeURI, encode: encodeURI}, true)
+const stack = lastingStack({name: 'aa', decode: decodeURI, encode: encodeURI}, true)
 
 stack.load(() => {
   stack.get(0).then((r) => console.log(r))

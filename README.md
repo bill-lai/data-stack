@@ -19,9 +19,9 @@ const stack = lastingStack({
 stack.push({ name: 'lzb', sex: 1 })
 stack.push({ name: 'bill', sex: 1 })
 
-// { name: 'bill', sex: 1 }
-stack.get(1)
 // { name: 'lzb', sex: 1 }
+stack.get(0)
+// { name: 'bill', sex: 1 }
 stack.pop()
 ```
 

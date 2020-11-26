@@ -1,6 +1,6 @@
 {
   "name": "lasting-stack",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The data can be stored in a specific way, such as cookie, session storage, local storage, or on your own server",
   "main": "src/export.js",
   "scripts": {
@@ -8,16 +8,17 @@
     "dev": "webpack serve --config ./config/webpack.dev.js",
     "build": "webpack --config ./config/webpack.prod.js"
   },
+  "homepage": "https://github.com/bill-lai/lasting-stack",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bill-lai/lasting-stack.git"
+  },
   "files": [
     "src/",
     "config/",
     "example/"
   ],
   "types": "types.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "854556519@qq.com"
-  },
   "keywords": [
     "stack",
     "lasting",

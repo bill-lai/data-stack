@@ -106,8 +106,8 @@ export class AyncStorageStack<T> extends Stack<T> {
   }
 
   protected async setLength (i) {
-    await this.Storage.setItem(this.length, i)
     this.cogradient(i)
+    await this.Storage.setItem(this.length, i)
   }
 
   load(cb: Function) {
@@ -121,15 +121,16 @@ export class AyncStorageStack<T> extends Stack<T> {
 
   async push(data) {
     let length = this.getLength()
-    await this.Storage.setItem(this.getKey(length), this.encode(data))
     await this.setLength(length + 1)
+    await this.Storage.setItem(this.getKey(length), this.encode(data))
     return data
   }
 
   async pop () {
     let length = this.getLength()
-    let data = await this.get(length - 1)
     await this.setLength(length - 1)
+    
+    let data = await this.get(length - 1)
     await this.Storage.removeItem(this.getKey(length - 1))
     return data
   }
